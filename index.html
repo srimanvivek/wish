@@ -7,6 +7,35 @@
 
 </head>
 <body>
+  <script>
+  // Set the exact time you want it to go live (in UTC)
+  const activationTime = new Date("2025-08-09T14:30:00Z"); // YYYY-MM-DDTHH:MM:SSZ format
+  
+  const now = new Date();
+
+  if (now < activationTime) {
+    // Show "Coming Soon" and hide the rest of the site
+    document.documentElement.innerHTML = `
+      <style>
+        body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          font-family: Arial, sans-serif;
+          background: #111;
+          color: #fff;
+          text-align: center;
+        }
+      </style>
+      <div>
+        <h1>🚀 Coming Soon</h1>
+        <p>This site will be live at ${activationTime.toUTCString()}</p>
+      </div>
+    `;
+  }
+</script>
+
 <!-- partial:index.partial.html -->
 <!-- A pen by Developer Rahul  -->
 <div class="paper heart">
